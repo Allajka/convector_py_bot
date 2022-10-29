@@ -15,7 +15,7 @@ def button_click(from_what_currency, amount, in_what_currency, username):
     status_code = result['success']
 
     if status_code:
-        answer = f"{result['query']['amount']} {result['query']['from']} = {round(int(result['result']),3)} {result['query']['to']}"
+        answer = f"{result['query']['amount']} {result['query']['from']} = {round(float(result['result']),2)} {result['query']['to']}"
         info_logger(f"{username} - Запрос обработан: {answer}")
         return answer
     else:
